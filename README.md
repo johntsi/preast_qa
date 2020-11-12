@@ -165,4 +165,4 @@ python question_answering/qa_eval_enc.py --run_name $qa_model_x --subset_name AL
 
 ## tips
 
-All the models can run efficiently using data parallelism and multiple workers for the dataloader. The default settings are optimized for a machine with 4 gpus (GeForce GTX 1080 Ti) and 12 cpu cores. In case of multiple gpus being available it is recommended to use the [custom batch sampler](question_answering/qa_batch_sampler) to balance the load of each gpu. The number optimal number of workers for the dataloader should be set half the number of cpu cores. 
+All the models can run efficiently using data parallelism and multiple workers for the dataloader. The default settings are optimized for a machine with 4 gpus (GeForce GTX 1080 Ti) and 12 cpu cores. In case of multiple gpus being available it is recommended to use the [custom batch sampler](question_answering/qa_batch_sampler.py) to balance the load of each gpu. The number optimal number of workers for the dataloader should be set half the number of cpu cores. 
