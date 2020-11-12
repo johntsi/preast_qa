@@ -1,0 +1,6 @@
+cls_token = "[CLS]"
+eos_token = "[EOS]"
+pad_token = "[PAD]"
+unk_token = "[UNK]"
+qa_token = "[QA]"
+nlg_token = "[NLG]"

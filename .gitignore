@@ -1,0 +1,10 @@
+*.ipynb
+*.pyc
+*.out
+*.pt
+*.json
+*.xlsx
+*.csv
+*.job
+*.h5
+*.zip
