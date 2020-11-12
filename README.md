@@ -17,7 +17,7 @@ Multi-style learning with synthetic abstractive answers |  Pairwise Passage Rank
    : A library of various specialized components for the encoder-decoder models used in this research that are able to process multiple sequences, including transformer blocks, pointer-generators, dual and triple co-attentions. It additionally includes an implementation of the pairwise passage ranker, that is proposed in this research.
 
 - __question_answering__
-   : The modules to initialize a Masque or PreastQA model and train it using multi-style and multi-task learning, and evaluate its performance. Masque is implemented following the methodology described in [Multi-style Generative Reading Comprehension](https://arxiv.org/abs/1901.02262).
+   : The modules to initialize a Masque or PreastQA model and train it using multi-style and multi-task learning, and evaluate its performance. Masque is implemented following the methodology described in [Multi-style Generative Reading Comprehension](https://arxiv.org/abs/1901.02262). PreastQA is based on Masque but it additionally uses data generated from a style-transfer. Furthermore, it employs a pairiwse ranker with a passage-to-passage transformer instead of a pointwise ranker for the task of passage ranking and a max-pooling classifier instead of a linear layer for the task of answerability classification.
 
 - __style_transfer__
    : The modules to initialize a Style-transfer model that learns how to create an abstractive (nlg-style) answer from an extractive (qa-style) one. The model is trained on quadruplets of (relevant passage, query, extractive answer, abstractive answer) and can then be used on inference mode to enrich the dataset with 300k more synthetic abstractive answers.
@@ -134,8 +134,6 @@ python question_answering/qa_train.py --include_dec --include_rnk --include_cls 
 ```
 
 ### train a PreastQA model
-
-It is based on Masque but it additionally uses data generated from a checkpoint c of a style-transfer model st_model_x. For passage ranking it uses a pairiwse ranker with a passage-to-passage transformer instead of a pointwise ranker and for answerability classification it uses a max-pooling classifier instead of a linear layer.
 
 ```
 python question_answering/qa_train.py --include_dec --include_rnk --include_cls --rnk_method pairwise --include_rnk_transformer --cls_method max --gamma_rnk 0.265 --gamma_cls 0.1 --use_nlg_gen_answers --generated_nlg_answers_path style_transfer/evaluation/$st_model_x/$c/predictions_infer.json --run_name $qa_model_x --dataset_name train --saving
