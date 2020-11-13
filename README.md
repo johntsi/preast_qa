@@ -1,6 +1,8 @@
 # Complex Question Answering by Pairwise Passage Ranking and Answer Style Transfer
 [![Python 3.6](https://img.shields.io/badge/Python-3.6-3776AB.svg?logo=python)](https://www.python.org/) [![PyTorch 1.3](https://img.shields.io/badge/PyTorch-1.3-EE4C2C.svg?logo=pytorch)](https://pytorch.org/docs/1.3.0/)
 
+PreastQA (**P**airwise **R**elevance and **E**xtractive to **A**bstractive **S**tyle-**T**ransfer **Q**uestion **A**nswering)
+
 MSc AI Thesis at the University of Amsterdam, July 2020
 
 ## Abstract
